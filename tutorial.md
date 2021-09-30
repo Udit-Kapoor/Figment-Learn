@@ -27,8 +27,8 @@ When you reach SmartPy.io , You will have a screen like below
 __IMAGEEE___
 
 Here we have two important links namely 
--[Online Editor](https://smartpy.io/ide)
--[Documentation](https://smartpy.io/docs/)
+- [Online Editor](https://smartpy.io/ide)
+- [Documentation](https://smartpy.io/docs/)
 
 The Online Editor will help us write , execute and test our Smart Contract before it is deployed on the Blockchain and Documentation will help us with various DataStructures , Conditions , DataTypes and much more!
 
@@ -47,11 +47,11 @@ import smartpy as sp
 And the functions of SmartPy will be called with the prefix sp.
 
 Moving on Python does not support direct conversion of Python Code to Michelson. Hence we would have to use functions present in SmartPy to even do basic operations. 
--sp.if
--sp.else
--sp.verify
--sp.for
--sp.while
+- sp.if
+- sp.else
+- sp.verify
+- sp.for
+- sp.while
 
 Next We have to understand that all SmartContracts are essentially Python Classes which have to be inherited from ```sp.Contract``` , All the Class Attributes will taken as the Contract Storage and All the Class methods will be considered as EntryPoints of the Contract which we can call from FrontEnd to change the state of the Contract.
 
@@ -74,15 +74,15 @@ class Calculator(sp.Contract):
 Here we have taken a variable *value* and defined it's DataType as *sp.TInt*
 
 As we know that Python does not support direct conversion of Python Code to Michelson, we have to use different Data Types as well. For Example:
--sp.TInt 
--sp.TBool
--sp.TTimestamp
--TBytes
+- sp.TInt 
+- sp.TBool
+- sp.TTimestamp
+- TBytes
 
 And Also Tezos Specific Data Types like:
--sp.TAddress
--sp.TMutez
--sp.big_map
+- sp.TAddress
+- sp.TMutez
+- sp.big_map
 
 You can read up about all the DataTypes and their equivalent SmartPy counterparts in the [Documentation](https://smartpy.io/docs/)
 
