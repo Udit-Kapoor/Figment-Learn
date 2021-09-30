@@ -17,6 +17,110 @@ You will need to have Temple Wallet Installed in your browser. Get it [HERE](htt
 
 
 # Body of the Tutorial
+##Section 1 : SmartPy IDE
+Hi all ! Let me start with explaining what SmartPy actually is ,  SmartPy is a high-level smart contracts library and comes with related tools in the form of [SmartPy.io](https://smartpy.io/) to greatly ease the accessibility, understandability and provability of smart contracts on Tezos.
+
+So Head on over to [SmartPy.io](https://smartpy.io/) and let us begin writing our First Smart Contract!
+
+When you reach SmartPy.io , You will have a screen like below
+
+__IMAGEEE___
+
+Here we have two important links namely 
+-[Online Editor](https://smartpy.io/ide)
+-[Documentation](https://smartpy.io/docs/)
+
+The Online Editor will help us write , execute and test our Smart Contract before it is deployed on the Blockchain and Documentation will help us with various DataStructures , Conditions , DataTypes and much more!
+
+Click on Online Editor Button and you will get a screen like below
+___IMAGE___
+Here SmartPy has provided us with various Template and sample contracts. It includes Games , Token Contracts and some basic Utility Contracts.
+We will be coding our own version of Calculator Contract that is present as one of the Examples.
+
+Before we start on with the coding we need to cover some of the basics
+
+We will be importing SmartPy library and use it throughout the Contract
+
+```
+import smartpy as sp
+```
+And the functions of SmartPy will be called with the prefix sp.
+
+Moving on Python does not support direct conversion of Python Code to Michelson. Hence we would have to use functions present in SmartPy to even do basic operations. 
+-sp.if
+-sp.else
+-sp.verify
+-sp.for
+-sp.while
+
+Next We have to understand that all SmartContracts are essentially Python Classes which have to be inherited from ```sp.Contract``` , All the Class Attributes will taken as the Contract Storage and All the Class methods will be considered as EntryPoints of the Contract which we can call from FrontEnd to change the state of the Contract.
+
+**NOTE: No change will take place in the Contract unless called the user via EntryPoint**
+
+Now on to Coding our Contract:
+We will import SmartPy Library
+
+```
+import smartpy as sp
+```
+
+Create a Python Class that inherits the class ```sp.Contract``` and define it's Storage
+
+```
+class Calculator(sp.Contract):
+    def __init__(self):
+        self.init(value = sp.TInt)
+```
+Here we have taken a variable *value* and defined it's DataType as *sp.TInt*
+
+As we know that Python does not support direct conversion of Python Code to Michelson, we have to use different Data Types as well. For Example:
+-sp.TInt 
+-sp.TBool
+-sp.TTimestamp
+-TBytes
+
+And Also Tezos Specific Data Types like:
+-sp.TAddress
+-sp.TMutez
+-sp.big_map
+
+You can read up about all the DataTypes and their equivalent SmartPy counterparts in the [Documentation](https://smartpy.io/docs/)
+
+
+```
+import smartpy as sp
+
+class Calculator(sp.Contract):
+    def __init__(self):
+        self.init(value = 0)
+
+    @sp.entry_point
+    def multiply(self, x, y):
+        self.data.value = x * y
+
+    @sp.entry_point
+    def add(self, x, y):
+        self.data.value = x + y
+
+    @sp.entry_point
+    def subtract(self, x, y):
+        self.data.value = x - y
+
+    @sp.entry_point
+    def divide(self, x, y):
+        self.data.value = x / y
+
+    @sp.entry_point
+    def square(self, x):
+        self.data.value = x * x
+
+    @sp.entry_point
+    def factorial(self, x):
+        self.data.value = 1
+        sp.for y in sp.range(1, x + 1):
+            self.data.value *= y
+```
+
 
 Points to remember:
 
