@@ -1,33 +1,20 @@
 # Introduction
+Hey Reader! Welcome to this Tutorial on How to write, deploy & interact with a smart contract on Tezos in SmartPy. We will be learing a lot and having fun alongside!
+You will be able to understand the industry standards of coding on SmartPy and be able to deploy your own Calculator Smart Contract whilist Understading the code as well.
 
-Explain the context for this tutorial and why it matters, what we're going to build and learn in this tutorial.
+- Tezos is an open-source blockchain protocol for assets and applications backed by a global community of validators, researchers, and builders. The Tezos protocol is secure, upgradable, and built to last.
+- SmartPy is an intuitive and powerful smart contract development platform for Tezos and is available through a Python library for building and analyzing Tezos smart contracts.
 
-- Explain this section like you're explaining it to 5-year-old (**ELI5**)
-- Explain everything in 5-6 lines maximum.
-
-*For example -*
-
-NEAR is a platform that allows anyone to create decentralized applications that can perform tasks without the need for a central entity. Building a Voting dApp is a good candidate for something that can showcase NEAR's power and potential. We're going to build a smart contract using Solidity, with a ReactJS front-end and at the end, we will deploy our dApp on the NEAR testnet.
 
 # **Prerequisites**
 
-Any prior knowledge needed or existing tutorials that need to be completed first, any tokens that are needed, mention them here.
+You need basic understanding of Python Language. Rest all will be covered from getting XTZ from the Faucet to Coding and Deployment!
 
-*For example -*
-
-- In this tutorial, we're going to build a Voting dApp on NEAR using DataHub so before we proceed further make sure to complete the Tutorial 1 "Connect to NEAR Node using DataHub" of the [NEAR Pathway](notion://www.notion.so/network-documentation/near/tutorials/intro-pathway-write-and-deploy-your-first-near-smart-contract/1.-connecting-to-a-near-node-using-datahub.md).
-- Complete the [Simple AssemblyScript App](notion://www.notion.so/network-documentation/near/tutorials/simple-webassembly-script.md) Tutorial, first.
 
 # **Requirements**
 
-Any technology that needs to be installed **prior** to starting the tutorial and that the tutorial will not cover (`Metamask`, `node`, `truffle`, etc). Do not list packages that will be installed during the tutorial.
+You will need to have Temple Wallet Installed in your browser. Get it [HERE](https://templewallet.com/).
 
-*For example -*
-
-- We'll need Metamask in this tutorial, install it from [HERE](https://metamask.io/).
-- Make sure to have NodeJS 12.0.1+ version installed.
-
-**OPTIONAL :** Embed any video content in this section, if your tutorial has any.
 
 # Body of the Tutorial
 
