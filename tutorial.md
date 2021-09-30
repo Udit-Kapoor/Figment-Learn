@@ -17,7 +17,7 @@ You will need to have Temple Wallet Installed in your browser. Get it [HERE](htt
 
 
 # Body of the Tutorial
-##Section 1 : SmartPy IDE
+## Section 1 : SmartPy IDE
 Hi all ! Let me start with explaining what SmartPy actually is ,  SmartPy is a high-level smart contracts library and comes with related tools in the form of [SmartPy.io](https://smartpy.io/) to greatly ease the accessibility, understandability and provability of smart contracts on Tezos.
 
 So Head on over to [SmartPy.io](https://smartpy.io/) and let us begin writing our First Smart Contract!
@@ -134,7 +134,7 @@ import smartpy as sp
 
 class Calculator(sp.Contract):
     def __init__(self):
-        self.init(value = 0)
+        self.init(value = sp.TInt)
         
     @sp.entry_point
     def add(self, x, y):
@@ -168,6 +168,129 @@ class Calculator(sp.Contract):
 ```
 
 You will notice that I have added two EntryPoints named *square* and *factorial*. These are just to demonstrate how we do basic Python Operations with SmartPy.
+
+## Section 2 : Test Scenarios
+Before we move on to deploying our contract on the Tezos Network , We need to first make sure all of code is working as we expect it to because Smart Contracts once deployed are immutable and we do not want to waste our XTZ Tokens.
+
+Here comes the concept of **Test Scenarios**
+
+Test Scenarios are good tools to make sure our smart contracts are working correctly.
+- A new test is a method marked with ```@sp.add_test```
+- A new scenario is instantiated by sp.test_scenario.
+- Scenarios describe a sequence of actions: originating contracts, computing expressions or calling entry points, etc.
+- In the online editor of SmartPy.io, the scenario is computed and then displayed as an HTML document on the output panel.
+
+Let's Start by defining a method named *test()* 
+
+```
+@sp.add_test(name = "Calculator")
+    def test():
+        pass
+```
+Now we need to instantiate a.k.a. *originate* our Smart Contract and create a *test scenario*
+
+```
+@sp.add_test(name = "Calculator")
+    def test():
+        ob = Calculator()
+        scenario = sp.test_scenario()
+```
+
+Now we can call all our entrypoints and check on the output panel if the *value* is being updated as we want it to
+
+```
+@sp.add_test(name = "Calculator")
+    def test():
+        ob = Calculator()
+        scenario = sp.test_scenario()
+        scenario.h1("Calculator")
+        scenario += ob
+        ob.multiply(x = 4, y = 2)
+        ob.add(x = 4, y = 2)
+        ob.subtract(x = 11, y = 5)
+        ob.divide(x = 15, y = 3)
+        ob.square(x = 3)
+        
+```
+
+With this Complete , We are now ready to go on to the Deployment Stage
+
+## Section 3: Faucet and Temple Wallet
+Before we go on with the deployment Let's first get some Testnet ꜩ from [Tezos Faucet](https://faucet.tzalpha.net/).
+
+Head on over to the above link and complete CAPTCHA Verification and you will have a screen like:
+
+__IMAGE___
+
+Download and keep this json file in a secure location as it contains the Secret Key and Mnemonic which will be used ahead.
+
+Now Open your Temple Wallet and Click on Settings > Import Account. *See Below*
+___IMAGE___
+
+Now select Faucet File as the Source and Upload the JSON file you downloaded from the Faucet. *See Below*
+
+___ IMAGE___
+
+We are now done with this section and can move on to Deployment
+
+## Section 4 : Deployment
+
+Alright coming back to SmartPy.io
+
+```
+import smartpy as sp
+
+class Calculator(sp.Contract):
+    def __init__(self):
+        self.init(value = sp.TInt)
+        
+    @sp.entry_point
+    def add(self, x, y):
+        self.data.value = x + y
+
+    @sp.entry_point
+    def multiply(self, x, y):
+        self.data.value = x * y
+
+    @sp.entry_point
+    def add(self, x, y):
+        self.data.value = x + y
+
+    @sp.entry_point
+    def subtract(self, x, y):
+        self.data.value = x - y
+
+    @sp.entry_point
+    def divide(self, x, y):
+        self.data.value = x / y
+
+    @sp.entry_point
+    def square(self, x):
+        self.data.value = x * x
+
+    @sp.entry_point
+    def factorial(self, x):
+        self.data.value = 1
+        sp.for y in sp.range(1, x + 1):
+            self.data.value *= y
+            
+    @sp.add_test(name = "Calculator")
+    def test():
+        ob = Calculator()
+        scenario = sp.test_scenario()
+        scenario.h1("Calculator")
+        scenario += ob
+        ob.multiply(x = 4, y = 2)
+        ob.add(x = 4, y = 2)
+        ob.subtract(x = 11, y = 5)
+        ob.divide(x = 15, y = 3)
+        ob.square(x = 3)
+```
+
+Go Ahead and run the above code in SmartPy IDE and on the Output Panel you will see the option to 
+
+
+
 
 
 
