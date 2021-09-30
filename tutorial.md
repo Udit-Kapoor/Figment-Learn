@@ -53,6 +53,8 @@ Moving on Python does not support direct conversion of Python Code to Michelson.
 - sp.for
 - sp.while
 
+You can check out usage of loops and conditions in SmartPy in the [Documentation](https://smartpy.io/docs/)
+
 Next We have to understand that all SmartContracts are essentially Python Classes which have to be inherited from ```sp.Contract``` , All the Class Attributes will taken as the Contract Storage and All the Class methods will be considered as EntryPoints of the Contract which we can call from FrontEnd to change the state of the Contract.
 
 **NOTE: No change will take place in the Contract unless called the user via EntryPoint**
@@ -86,6 +88,46 @@ And Also Tezos Specific Data Types like:
 
 You can read up about all the DataTypes and their equivalent SmartPy counterparts in the [Documentation](https://smartpy.io/docs/)
 
+Moving on , Now we have to define our first method i.e EntryPoint. We have to write ```@sp.entry_point``` before we define a method so that the compiler knows that whatever code follows is an EntryPoint
+
+
+```
+@sp.entry_point
+    def add(self, x, y):
+        self.data.value = x + y
+
+```
+
+The above function takes two parameters *x* and *y* and stores their sum in our initially defined variable *value* which is accessed by ```self.data.value```.
+
+Just like the above function we can create all the EntryPoints that a Calculator Contracts
+
+- Subtract
+```
+@sp.entry_point
+    def subtract(self, x, y):
+        self.data.value = x - y
+
+```
+
+- Multiply
+```
+@sp.entry_point
+    def multiply(self, x, y):
+        self.data.value = x * y
+
+```
+
+- Divide
+```
+@sp.entry_point
+    def divide(self, x, y):
+        self.data.value = x / y
+
+```
+
+Now it's time to compile all the above Code Blocks and create our Contract
+
 
 ```
 import smartpy as sp
@@ -93,6 +135,10 @@ import smartpy as sp
 class Calculator(sp.Contract):
     def __init__(self):
         self.init(value = 0)
+        
+    @sp.entry_point
+    def add(self, x, y):
+        self.data.value = x + y
 
     @sp.entry_point
     def multiply(self, x, y):
@@ -120,6 +166,9 @@ class Calculator(sp.Contract):
         sp.for y in sp.range(1, x + 1):
             self.data.value *= y
 ```
+
+You will notice that I have added two EntryPoints named *square* and *factorial*. These are just to demonstrate how we do basic Python Operations with SmartPy.
+
 
 
 Points to remember:
