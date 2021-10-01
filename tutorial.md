@@ -57,9 +57,11 @@ Moving on Python does not support direct conversion of Python Code to Michelson.
 
 You can check out usage of loops and conditions in SmartPy in the [Documentation](https://smartpy.io/docs/)
 
-Next We have to understand that all SmartContracts are essentially Python Classes which have to be inherited from ```sp.Contract``` , All the Class Attributes will taken as the Contract Storage and All the Class methods will be considered as EntryPoints of the Contract which we can call from FrontEnd to change the state of the Contract.
+Next, We have to understand that all SmartContracts are essentially Python Classes which have to be inherited from ```sp.Contract``` .
+All the Class Attributes will be taken as the Contract Storage 
+All the Class methods will be considered as EntryPoints of the Contract which we can call from Front-End to change the state of the Contract.
 
-**NOTE: No change will take place in the Contract unless called the user via EntryPoint**
+**NOTE: No change will take place in the Contract unless called by the user via EntryPoint**
 
 Now on to Coding our Contract:
 We will import SmartPy Library
