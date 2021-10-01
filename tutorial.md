@@ -33,7 +33,9 @@ Here we have two important links namely
 The Online Editor will help us write , execute and test our Smart Contract before it is deployed on the Blockchain and Documentation will help us with various DataStructures , Conditions , DataTypes and much more!
 
 Click on Online Editor Button and you will get a screen like below
+
 ___IMAGE___
+
 Here SmartPy has provided us with various Template and sample contracts. It includes Games , Token Contracts and some basic Utility Contracts.
 We will be coding our own version of Calculator Contract that is present as one of the Examples.
 
@@ -71,11 +73,11 @@ Create a Python Class that inherits the class ```sp.Contract``` and define it's 
 ```
 class Calculator(sp.Contract):
     def __init__(self):
-        self.init(value = sp.TInt)
+        self.init(value = 0)
 ```
-Here we have taken a variable *value* and defined it's DataType as *sp.TInt*
+Here we have taken a variable *value* and defined it's intial value as 0
 
-As we know that Python does not support direct conversion of Python Code to Michelson, we have to use different Data Types as well. For Example:
+As we know that Python does not support direct conversion of Python Code to Michelson, we use different Data Types as well. For Example:
 - sp.TInt 
 - sp.TBool
 - sp.TTimestamp
@@ -134,7 +136,7 @@ import smartpy as sp
 
 class Calculator(sp.Contract):
     def __init__(self):
-        self.init(value = sp.TInt)
+        self.init(value = 0)
         
     @sp.entry_point
     def add(self, x, y):
@@ -242,7 +244,7 @@ import smartpy as sp
 
 class Calculator(sp.Contract):
     def __init__(self):
-        self.init(value = sp.TInt)
+        self.init(value = 0)
         
     @sp.entry_point
     def add(self, x, y):
