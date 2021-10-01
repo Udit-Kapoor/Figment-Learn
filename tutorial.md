@@ -355,21 +355,21 @@ As we can see our transaction changed the *value* in Storage of Contract to sum 
 
 # **Conclusion**
 
-This section should summarize what was learned, reinforce key points and also congratulate the learner for completing the tutorial. Use a maximum of 5-6 lines.
+In this Tutorial We learn how to Code in SmartPy , Get XTZ from the Faucet , Deploy the Contract on Blockchain and How to interact with the Contract using On Chain Explorer and how our entrypoints can change contract's storage.
 
 # Next Steps *(Optional)*
 
-Use this section to explain what can be done next after this tutorial for continued learning.
-Feel free to add recommended projects and articles here which are related to this tutorial. If you're working on any other advanced tutorials, you can briefly mention them here.
+I would like for you to try out all the EndPoints that we have created and check what changes they make to the Storage!
+Once you are comfortable with this basic Contract you can go on about creating complex Contracts , NFT Tokens and much more.
 
 # About The **Author**
 
-Keep it short. One or two lines at most. You can include a link to your GitHub profile + [Figment Forum](https://community.figment.io) profile, however please refrain from adding your LinkedIn or Twitter here.
+Hi! I am Udit Kapoor , currently a Tezos India 2.0 Fellow and a Blockchain enthusiast! My signature project is CryptoWill and I dabble in Flutter as well!
+Here is my [GitHun](https://github.com/Udit-Kapoor) and you can find me on Discord as pichkari#0056
 
 # **References**
 
-This section ***must*** be present if you have taken any help in writing this tutorial from other documents, GitHub repos and existing tutorials.
+I have refrenced the Calculator Example present on SmartPy.io and added to it.
+I have also referenced some points from [OpenTezos](https://opentezos.com/) which is a beautifully crafted guide!
 
-Credit sources by adding their name and a link to the document when possible. 
-
-If it is not a digital document, include an ISBN or other form of reference.
+Rest assured all my content is original and written by me and no one else!
