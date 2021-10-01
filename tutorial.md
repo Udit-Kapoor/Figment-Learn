@@ -34,7 +34,7 @@ The Online Editor will help us write , execute and test our Smart Contract befor
 
 Click on Online Editor Button and you will get a screen like below
 
-___IMAGE___
+![SmartPy](smartpy2.png)
 
 Here SmartPy has provided us with various Template and sample contracts. It includes Games , Token Contracts and some basic Utility Contracts.
 We will be coding our own version of Calculator Contract that is present as one of the Examples.
@@ -218,16 +218,17 @@ Before we go on with the deployment Let's first get some Testnet ꜩ from [Tezos
 
 Head on over to the above link and complete CAPTCHA Verification and you will have a screen like:
 
-__IMAGE___
+![Faucet](faucet1.png)
 
 Download and keep this json file in a secure location as it contains the Secret Key and Mnemonic which will be used ahead.
 
 Now Open your Temple Wallet and Click on Settings > Import Account. *See Below*
-___IMAGE___
+
+![Temple](temple1.png)
 
 Now select Faucet File as the Source and Upload the JSON file you downloaded from the Faucet. *See Below*
 
-___ IMAGE___
+![Temple](temple2.png)
 
 We are now done with this section and can move on to Deployment
 
@@ -283,18 +284,19 @@ class Calculator(sp.Contract):
 
 Go Ahead and run the above code in SmartPy IDE and on the Output Panel you will see the option to **Deploy Michelson Contract** . *See Below*
 
-__ IMAGE__
+![Deploy](deploy1.png)
 
 You will be be redirected to the Origination Page of the Contract. 
 
 On this page we have to select on which Node we wish to deploy our Contract. Check Your Temple Wallet and the JSON you got from the Faucet in the previous section and select the appropriate Node.
 Then Click on the Temple Wallet Option and connect your wallet to SmartPy.io *See Below*
 
-__IMAGE___
+
+![Deploy](deploy2_1.png)
 
 Scroll Down and Click **Estimate Call From RPC** and then click on **Deploy Contract**. *See Below*
 
-___IMAGEE__
+![Deploy](deploy3.png)
 
 Then in the POP-UP that appears click on **ACCEPT** and then Temple Wallet will open up and you need to click on **SIGN** button.
 
@@ -302,7 +304,7 @@ After this step your Contract will successfully be deployed on Tezos's Granada T
 
 Copy the Contract Address as seen on the screen and Wait for atleast 3 Block Confirmations. *See Below*
 
-__IMAGE__
+![Deploy](deploy4.png)
 
 ## Section 5 : Exploring and Interacting With the Contract
 
@@ -312,16 +314,16 @@ Copy your Contract Address and head on over to [Better Call Dev](https://better-
 
 Paste the contract address in the search box and press Enter. *See Below*
 
-___IMAGE___
+![Interact](interact1.png)
 
 You will be able to see your contract. If not wait for some time and then refresh the page as it takes some time for the Block Confirmations to arrive.
 
-__Image__
+![Interact](interact2.png)
 
 
 Now Head on over to **Interact** Tab and you will be able to see all your EntryPoints available there with the input parameters that we specified.
 
-__IMAGE__
+![Interact](interact3.png)
 
 Now We will call our ```Add``` EntryPoint!
 
@@ -329,13 +331,13 @@ Now We will call our ```Add``` EntryPoint!
 2. Then put integer values in **X** and **Y** fields.
 3. Add your wallet address as **Source** and leave the **amount** field blank.
 
-__IMAGE__
+![Interact](interact4.png)
 
 One of the best features of Better Call Dev is that we can simulate any transaction without having to spend any XTZ.
 So Click on **EXECUTE** and choose **Simulate**
 BetterCallDev will simulate the transaction and tell us if it is valid or will it fail and also what changes will it do to the Contract's Storage.
 
-__IMAGE__
+![Interact](interact5.png)
 
 
 Finally it is time that we complete our First Interaction!!
@@ -344,11 +346,11 @@ This time Click on **Execute** and Select **Temple - Tezos Wallet** instead of *
 
 It will pop up your Temple Wallet and ask you to Sign the Transaction. It will also tell you the Gas Fee you are paying to complete the Transaction. *See Below*
 
-__IMAGE___
+![Interact](interact6.png)
 
 Finally head on over to the **Operations** Tab on Better Call Dev and you will be able to see your Transaction and all it's details
 
-___IMAGE__
+![Interact](interact7.png)
 
 As we can see our transaction changed the *value* in Storage of Contract to sum of our parameters i.e. 16.
 
