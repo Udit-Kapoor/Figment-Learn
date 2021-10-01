@@ -24,7 +24,7 @@ So Head on over to [SmartPy.io](https://smartpy.io/) and let us begin writing ou
 
 When you reach SmartPy.io , You will have a screen like below
 
-__IMAGEEE___
+![SmartPy](smartpy1.png)
 
 Here we have two important links namely 
 - [Online Editor](https://smartpy.io/ide)
@@ -357,7 +357,7 @@ As we can see our transaction changed the *value* in Storage of Contract to sum 
 
 In this Tutorial We learn how to Code in SmartPy , Get XTZ from the Faucet , Deploy the Contract on Blockchain and How to interact with the Contract using On Chain Explorer and how our entrypoints can change contract's storage.
 
-# Next Steps *(Optional)*
+# Next Steps
 
 I would like for you to try out all the EndPoints that we have created and check what changes they make to the Storage!
 Once you are comfortable with this basic Contract you can go on about creating complex Contracts , NFT Tokens and much more.
@@ -365,7 +365,7 @@ Once you are comfortable with this basic Contract you can go on about creating c
 # About The **Author**
 
 Hi! I am Udit Kapoor , currently a Tezos India 2.0 Fellow and a Blockchain enthusiast! My signature project is CryptoWill and I dabble in Flutter as well!
-Here is my [GitHun](https://github.com/Udit-Kapoor) and you can find me on Discord as pichkari#0056
+Here is my [GitHub](https://github.com/Udit-Kapoor) and you can find me on Discord as pichkari#0056
 
 # **References**
 
