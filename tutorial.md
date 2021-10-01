@@ -108,7 +108,7 @@ Just like the above function we can create all the EntryPoints that a Calculator
 ```
 @sp.entry_point
     def subtract(self, x, y):
-        self.data.value = x - y
+        self.data.value = sp.as_nat(x - y)
 
 ```
 
@@ -137,10 +137,6 @@ import smartpy as sp
 class Calculator(sp.Contract):
     def __init__(self):
         self.init(value = 0)
-        
-    @sp.entry_point
-    def add(self, x, y):
-        self.data.value = x + y
 
     @sp.entry_point
     def multiply(self, x, y):
@@ -152,11 +148,11 @@ class Calculator(sp.Contract):
 
     @sp.entry_point
     def subtract(self, x, y):
-        self.data.value = x - y
+        self.data.value = sp.as_nat(x - y)
 
     @sp.entry_point
     def divide(self, x, y):
-        self.data.value = x / y
+        self.data.value = x // y
 
     @sp.entry_point
     def square(self, x):
@@ -245,10 +241,6 @@ import smartpy as sp
 class Calculator(sp.Contract):
     def __init__(self):
         self.init(value = 0)
-        
-    @sp.entry_point
-    def add(self, x, y):
-        self.data.value = x + y
 
     @sp.entry_point
     def multiply(self, x, y):
@@ -260,11 +252,11 @@ class Calculator(sp.Contract):
 
     @sp.entry_point
     def subtract(self, x, y):
-        self.data.value = x - y
+        self.data.value = sp.as_nat(x - y)
 
     @sp.entry_point
     def divide(self, x, y):
-        self.data.value = x / y
+        self.data.value = x // y
 
     @sp.entry_point
     def square(self, x):
@@ -286,42 +278,80 @@ class Calculator(sp.Contract):
         ob.add(x = 4, y = 2)
         ob.subtract(x = 11, y = 5)
         ob.divide(x = 15, y = 3)
-        ob.square(x = 3)
+        ob.square(3)
 ```
 
-Go Ahead and run the above code in SmartPy IDE and on the Output Panel you will see the option to 
+Go Ahead and run the above code in SmartPy IDE and on the Output Panel you will see the option to **Deploy Michelson Contract** . *See Below*
+
+__ IMAGE__
+
+You will be be redirected to the Origination Page of the Contract. 
+
+On this page we have to select on which Node we wish to deploy our Contract. Check Your Temple Wallet and the JSON you got from the Faucet in the previous section and select the appropriate Node.
+Then Click on the Temple Wallet Option and connect your wallet to SmartPy.io *See Below*
+
+__IMAGE___
+
+Scroll Down and Click **Estimate Call From RPC** and then click on **Deploy Contract**. *See Below*
+
+___IMAGEE__
+
+Then in the POP-UP that appears click on **ACCEPT** and then Temple Wallet will open up and you need to click on **SIGN** button.
+
+After this step your Contract will successfully be deployed on Tezos's Granada Testnet.
+
+Copy the Contract Address as seen on the screen and Wait for atleast 3 Block Confirmations. *See Below*
+
+__IMAGE__
+
+## Section 5 : Exploring and Interacting With the Contract
+
+Now we are at the final steps of this tutorial and We are going to learn how to explore our contract on Chain and how to interact with it.
+
+Copy your Contract Address and head on over to [Better Call Dev](https://better-call.dev/).
+
+Paste the contract address in the search box and press Enter. *See Below*
+
+___IMAGE___
+
+You will be able to see your contract. If not wait for some time and then refresh the page as it takes some time for the Block Confirmations to arrive.
+
+__Image__
 
 
+Now Head on over to **Interact** Tab and you will be able to see all your EntryPoints available there with the input parameters that we specified.
+
+__IMAGE__
+
+Now We will call our ```Add``` EntryPoint!
+
+1. Go Ahead and select **ADD** from the right pane of EntryPoints.
+2. Then put integer values in **X** and **Y** fields.
+3. Add your wallet address as **Source** and leave the **amount** field blank.
+
+__IMAGE__
+
+One of the best features of Better Call Dev is that we can simulate any transaction without having to spend any XTZ.
+So Click on **EXECUTE** and choose **Simulate**
+BetterCallDev will simulate the transaction and tell us if it is valid or will it fail and also what changes will it do to the Contract's Storage.
+
+__IMAGE__
 
 
+Finally it is time that we complete our First Interaction!!
 
+This time Click on **Execute** and Select **Temple - Tezos Wallet** instead of **Simulate**.
 
-Points to remember:
+It will pop up your Temple Wallet and ask you to Sign the Transaction. It will also tell you the Gas Fee you are paying to complete the Transaction. *See Below*
 
-- **Section headings like Introduction, Prerequisites, etc. *must* all be H1, keep all sub-headings at H2.**
-    - In Markdown syntax, a single hashmark is used for H1 headings: #
-    - Two hashmarks are used for H2 headings: ##
-- Add all relevant Code Blocks, with the appropriate syntax highlighting:
-    - ```text must be used for terminal output, terminal commands and plaintext.
-    - ```javascript can be used for both JavaScript and Solidity, while ```jsx can be used for ReactJS code.
-    - Use ```rust and ```toml when highlighting Rust or TOML syntax.
-    - Use ```graphql when highlighting GraphQL
-    - Use ```json when highlighting valid JSON (for invalid JSON examples, use ```text instead).
-    - ```bash should *only* be used for Code Blocks where you need to have # style comments. This must be done carefully because in many situations the # character will render as a heading. If this happens it will usually wreck the Table of Contents.
-- Add necessary comments in Code Blocks.
-- Add any text content necessary to guide readers through your tutorial.
-- Add Images or Code Blocks to reflect expected terminal output.
-- Add common errors and steps to troubleshoot the errors, *for example -*
+__IMAGE___
 
-**Not able to connect to the Avalanche Node and getting error on executing `node connect.js`**
+Finally head on over to the **Operations** Tab on Better Call Dev and you will be able to see your Transaction and all it's details
 
-Let's check for some common causes:
+___IMAGE__
 
-- First, make sure you have the `.env` file saved and it's in the correct format as given in the tutorial.
-- If you're getting an error message like `UnauthorizedError: { "message":"Invalid authentication credentials" }` then make sure to replace the `<API_KEY>` with your correct API key which you copied from the DataHub Dashboard.
-- Make sure to have the `.env` file saved in your project root folder.
-- Make sure `NODE_URL` in the `.env` file is correct.
-- If you're still experiencing the same issue, reach out to us on [Discord](https://discord.gg/fszyM7K) or on the [Forum](https://community.figemnt.io/) for help.
+As we can see our transaction changed the *value* in Storage of Contract to sum of our parameters i.e. 16.
+
 
 # **Conclusion**
 
