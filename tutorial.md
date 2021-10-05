@@ -43,7 +43,7 @@ Before we start on with the coding we need to cover some of the basics
 
 We will be importing SmartPy library and use it throughout the Contract
 
-```
+```python
 import smartpy as sp
 ```
 And the functions of SmartPy will be called with the prefix sp.
@@ -66,7 +66,7 @@ All the Class methods will be considered as EntryPoints of the Contract which we
 Now on to Coding our Contract:
 We will import SmartPy Library
 
-```
+```python
 import smartpy as sp
 ```
 
